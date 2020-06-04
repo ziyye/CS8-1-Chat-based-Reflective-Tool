@@ -1,0 +1,21 @@
+<div>
+  <ul class="header"><strong>Charts</strong></ul>
+<cdk-virtual-scroll-viewport itemSize="50" class="viewport">
+<div *cdkVirtualFor="let item of units | async; let id = index" class="example-item" >
+
+  <ul>
+    <li class="units"><strong>{{item.name}}</strong></li>
+  </ul>
+  <div class="chart-wrapper">
+       <canvas baseChart 
+          [data]="ChartData(id)"
+          [labels]="doughnutChartLabels"
+          [chartType]="doughnutChartType">
+      </canvas>
+  </div>
+
+
+</div>
+
+</cdk-virtual-scroll-viewport>
+</div>

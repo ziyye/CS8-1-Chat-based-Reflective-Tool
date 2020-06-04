@@ -1,0 +1,19 @@
+
+ <div class="sidebar">
+        <div class="user-account float-right">
+            <br>
+            <!-- <span>Welcome,</span> -->
+            <!-- <p class="state" *ngIf="user">Logged in as: {{ user?.email }} - {{ user?.displayName }}</p> -->
+            <p class="user" *ngIf="user">Welcome, <strong>{{ user?.displayName }}</strong></p>
+            <!-- <a class = "user" ngbDropdownToggle><strong>
+                {{ user?.displayName }}</strong></a>  -->
+                <ul>
+                    
+                   <button class="float-right" (click)="logout()" >Logout</button>
+
+                </ul>
+        
+            
+
+        </div>
+</div>

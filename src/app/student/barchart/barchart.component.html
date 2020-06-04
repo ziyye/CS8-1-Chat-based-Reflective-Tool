@@ -1,0 +1,18 @@
+<div class="header">
+    <h2><strong>Progress</strong></h2>
+</div>
+    
+<div *ngFor="let item of course | async; let id = index" class="body">
+
+    <ul class="name">                
+         {{item.name}}                         
+    </ul> 
+    <br>
+    <div class="bar">
+       <mat-progress-bar mode="determinate" value={{item.progress}}></mat-progress-bar>
+
+    <br>
+    <br>
+     </div>
+</div>
+

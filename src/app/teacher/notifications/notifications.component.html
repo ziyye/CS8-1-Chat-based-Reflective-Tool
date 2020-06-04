@@ -1,0 +1,25 @@
+
+    <div>
+        <ul class="header"><strong>Notifications</strong></ul>
+        <cdk-virtual-scroll-viewport itemSize="50" class="viewport">
+            <div *cdkVirtualFor="let item of notifications; let id = index" class="example-item">
+                <ul *ngIf="item.state == 'difficult'">                
+                     <li class="text_read" (click)="detail_read(item)" >{{item.names}} has a difficulty in quiz1</li>                       
+                    <span class="timestamp">{{item.date.toDate()| date:'HH:mm dd-MM-yyyy'}}</span>
+                </ul>     
+                <ul *ngIf="item.state == 'significant'">
+                    <li class="text_unread" (click)="detail_unread(item,id)" >{{item.names}} has a breakthrough in quiz1</li>                       
+                    <span class="timestamp">{{item.date.toDate()| date:'HH:mm dd-MM-yyyy'}}</span>
+                </ul>    
+            </div>
+        
+        </cdk-virtual-scroll-viewport>
+        <ul>
+            <cdk-virtual-scroll-viewport itemSize="50" type="text" 
+            id="content" class="content" [(ngModel)]="content">
+                {{content}}
+            </cdk-virtual-scroll-viewport>
+           
+        </ul>   
+    </div>
+    

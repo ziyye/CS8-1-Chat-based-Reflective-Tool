@@ -1,0 +1,52 @@
+
+    <div>
+        <ul class="header"><strong>Lists</strong></ul>
+
+        <ul class="task">
+        <select class = "select" [(ngModel)]="selected_task" > 
+
+            <option [value]="item.name" *ngFor="let item of units | async; let id = index" >{{item.name}}</option>
+
+        </select>
+
+        </ul>
+        <ul>
+        <cdk-virtual-scroll-viewport itemSize="50" class="viewport">
+            <!-- .[ngClass]="{.active: button == 'unsubmitted'}" -->
+                <button (click)="click_un()" class="button" [ngClass]="{active: button == 'unsubmitted'}">Unsubmitted</button>
+                <button (click)="click_sub()" class="button" [ngClass]="{active: button == 'submitted'}">Submitted</button> 
+                <button (click)="click_diff()" class="button" [ngClass]="{active: button == 'diff'}">Difficult</button>
+                <button (click)="click_sig()" class="button" [ngClass]="{active: button == 'sig'}">Breakthrough</button>
+
+            <div *cdkVirtualFor="let item of units" class="example-item">
+                <div *ngIf="item.name == selected_task">
+
+                    <div *ngIf=" button == 'unsubmitted'">    
+
+                        <span class="name">{{item.unsub}}</span>        
+                                      
+                     
+                    </div>   
+                   <div *ngIf=" button == 'submitted'">    
+    
+                    <span class="name">{{item.sub}}</span>                       
+                 
+                  </div>  
+                  <div *ngIf=" button == 'diff'">    
+    
+                    <span class="name">{{item.diff}}</span>                       
+                 
+                  </div>  
+                  <div *ngIf=" button == 'sig'">    
+    
+                    <span class="name">{{item.sig}}</span>                       
+                 
+                  </div> 
+
+                </div>
+
+            </div>
+        </cdk-virtual-scroll-viewport>
+        </ul>
+    </div>
+    

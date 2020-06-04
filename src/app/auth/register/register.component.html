@@ -1,0 +1,68 @@
+
+<div class="register-content">
+    <div class="register-top">
+      <h4>User Registration</h4>
+    </div>
+  
+    <div class="">
+      <div class="register-top-errormessage" *ngIf="authError">
+        <div class="alert alert-danger">
+          {{ authError?.message }}
+        </div>
+      </div>
+      <form #userRegForm="ngForm" (ngSubmit)="createUser(userRegForm)">
+        <div class="register-center clearfix">
+          <div class="register-center-input">
+            <label for="firstName">First name</label>
+            <input ngModel #firstname="ngModel" name="firstName" type="text" class="form-control" id="firstName">
+          </div>
+        </div>
+
+        <div class="register-center clearfix">
+          <div class="register-center-input">
+            <label for="lastName">Last name</label>
+            <input ngModel #lastname="ngModel" name="lastName" type="text" class="form-control" id="lastName" value="">
+          </div>
+        </div>
+
+        <div class="register-center clearfix">
+          <div class="register-center-input">
+            <label for="email">Email</label>
+            <input ngModel #email="ngModel" name="email" type="email" class="form-control">
+          </div>
+        </div>
+
+        <div>
+          <div class="register-center clearfix">
+            <div class="register-center-input">
+              <label for="password">Password</label>
+              <input ngModel #password="ngModel" name="password" type="password" class="form-control">
+            </div>
+          </div>
+          <div class="register-center clearfix">
+            <div class="register-center-input">
+              <label>Confirm Password</label>
+              <input name="password" type="password" class="form-control">
+            </div>
+          </div>
+          <div class="register-center clearfix">
+            <div class="register-center-input2">
+              <input ngModel #occupation="ngModel" name="occupation" type="radio" value="1" id="s1" class="form-control1"><label for="s1">Student</label>
+              <input ngModel #occupation="ngModel" name="occupation" type="radio" value="2" id="t1" class="form-control2"><label for="t1">Teacher</label>
+            
+            </div>
+          </div>
+         
+     
+          <div class="">
+              <button class="register-button" type="submit">Submit</button>
+          </div>
+          <div class="register-button-back">
+            <a href="/login">Click here to login</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+

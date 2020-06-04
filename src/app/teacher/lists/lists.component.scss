@@ -1,0 +1,41 @@
+.content{
+    margin-top: 15px;
+    margin-left: -25px;
+    width: 290px;
+    height: 100px;
+    border: 1px solid #49c5b6;
+    font-size: small;
+    text-align: justify;
+    
+}
+.header{
+    font-size: 20px;
+    text-align: justify;
+    margin-top: 30px;
+}
+.viewport {
+    height: 445px;
+    width: 370px;
+    border: 1px solid #49c5b6;
+    margin-left: -10px;
+  }
+.button {
+    width: 92px;
+}
+.task{
+    margin-left: -10px;
+}
+.select{
+    width: 110px;
+}
+.name{
+    margin-left: 10px;
+}
+.example-item{
+    margin-top: 10px;
+}
+.active{
+    background-color: darkgray;
+    font-weight: bold;
+    width: 92px;
+}

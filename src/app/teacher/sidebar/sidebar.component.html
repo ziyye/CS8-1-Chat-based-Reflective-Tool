@@ -1,0 +1,15 @@
+
+ <div class="sidebar">
+        <div class="user-account float-right">
+            <br>
+            <p class="user" *ngIf="user">Welcome, <strong>{{ user?.displayName }}</strong></p>
+                <ul>
+                    
+                   <button class="float-right" (click)="logout()">Logout</button>
+
+                </ul>
+        
+            
+
+        </div>
+</div>

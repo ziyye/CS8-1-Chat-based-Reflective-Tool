@@ -1,0 +1,29 @@
+.main{
+    // background: #49c5b6;
+}
+.sidebar{
+     background: #49c5b6;
+
+}
+.content{
+    width: 100%;
+    height: 510px;
+    display: flex;
+
+    .left{
+       
+        width: 340px;
+        border-right: 2px solid #eaeaea;
+        height: 550px;
+    }
+    .medium{
+        width: 600px;
+        border-right: 2px solid #eaeaea;
+        height: 550px;
+
+    }
+    .right{
+        width: 450px;
+        height: 550px;
+    }
+}

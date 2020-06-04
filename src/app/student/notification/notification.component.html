@@ -1,0 +1,24 @@
+<!-- <div class="dropdown" ngbDropdown> -->
+<div>
+    <ul class="header"><strong>Notifications</strong></ul>
+    <cdk-virtual-scroll-viewport itemSize="50" class="viewport">
+        <div *cdkVirtualFor="let item of notifications; let id = index" class="example-item">
+            <ul *ngIf="item.ifread == 'read'">                
+                 <li class="text_read" (click)="detail_read(item)" >{{item.title}}</li>                       
+                <span class="timestamp">{{item.date.toDate()| date:'HH:mm dd-MM-yyyy'}}</span>
+            </ul>     
+            <ul *ngIf="item.ifread == 'unread'">
+                <li class="text_unread" (click)="detail_unread(item,id)" >{{item.title}}</li>                       
+                <span class="timestamp">{{item.date.toDate()| date:'HH:mm dd-MM-yyyy'}}</span>
+            </ul>    
+        </div>
+    
+    </cdk-virtual-scroll-viewport>
+    <ul>
+        <cdk-virtual-scroll-viewport itemSize="50" type="text" 
+        id="content" class="content" [(ngModel)]="content">
+            {{content}}
+        </cdk-virtual-scroll-viewport>
+       
+    </ul>   
+</div>
